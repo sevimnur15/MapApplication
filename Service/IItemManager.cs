@@ -2,16 +2,19 @@
 using BasarsoftFirst.Home;
 using BasarsoftFirst.congrate;
 using BasarsoftFirst.Service;
+using System.Collections.Generic;
 
 namespace BasarsoftFirst.Service
 {
     public interface IItemManager<T> where T : class
     {
-        Response GetAll();
-        Response GetById(int id);
-        Response Add(T entity);
-        Response Update(T entity);
-        Response Delete(int id);
+        
+        List<T> GetAll();
+        List<T> GetById(int id);
+        List<T> Add(T entity);
+        List<T> Update(T entity);
+        // Belirli bir id'ye göre öğe siler ve list1 adında bir Response listesi döner
+        List<T> Delete(int id);
     }
 }
 

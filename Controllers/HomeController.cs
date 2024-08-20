@@ -2,16 +2,15 @@
 using BasarsoftFirst.Home;
 using BasarsoftFirst.Service;
 using Microsoft.AspNetCore.Mvc;
-
+using System.Collections.Generic;
+using System.Linq; // Linq namespace'ini eklemeyi unutmayın
 
 namespace BasarsoftFirst.Controllers
 {
-
     [ApiController]
     [Route("api/[Controller]")]
     public class HomeController : ControllerBase
     {
-
         private readonly IItemManager<Item> _itemManager;
 
         public HomeController(IItemManager<Item> itemManager)
@@ -19,36 +18,92 @@ namespace BasarsoftFirst.Controllers
             _itemManager = itemManager;
         }
 
+        // Tüm öğeleri döndürür
         [HttpGet]
-        public Response GetAll()
+        public ActionResult<List<Item>> GetAll()
         {
-            return _itemManager.GetAll();
+            var _result = new List<Item>();
+            try
+            {
+                _result = _itemManager.GetAll();
+                return Ok(_result); // 200 OK döner
+            }
+            catch (System.Exception _ex)
+            {
+                return StatusCode(500, new Response { Message = _ex.Message, Success = false }); // 500 Internal Server Error döner
+            }
         }
 
+        // Belirli bir öğeyi ID ile döndürür
         [HttpGet("{id}")]
-        public Response GetById(int id)
+        public ActionResult<Item> GetById(int id)
         {
-            return _itemManager.GetById(id);
+            try
+            {
+                var item = _itemManager.GetById(id);
+                if (item == null)
+                {
+                    return NotFound(); // 404 Not Found döner
+                }
+                return Ok(item); // 200 OK döner
+            }
+            catch (System.Exception _ex)
+            {
+                return StatusCode(500, new Response { Message = _ex.Message, Success = false }); // 500 Internal Server Error döner
+            }
         }
 
+        // Yeni bir öğe ekler
         [HttpPost]
-        public Response Add(Item entity)
+        public ActionResult<Item> Add(Item entity)
         {
-            return _itemManager.Add(entity);
+            try
+            {
+                var createdItems = _itemManager.Add(entity); // Bu satırda birden fazla öğe dönebilir
+                var createdItem = createdItems.FirstOrDefault(); // İlk öğeyi al
+
+                if (createdItem == null)
+                {
+                    return BadRequest(new Response { Message = "Item could not be created.", Success = false }); // Başarısız oldu
+                }
+
+                return CreatedAtAction(nameof(GetById), new { id = createdItem.Id }, createdItem); // 201 Created döner
+            }
+            catch (System.Exception _ex)
+            {
+                return StatusCode(500, new Response { Message = _ex.Message, Success = false }); // 500 Internal Server Error döner
+            }
         }
 
+        // Mevcut bir öğeyi günceller
         [HttpPut]
-        public Response Update(Item entity)
+        public ActionResult<Item> Update(Item entity)
         {
-            return _itemManager.Update(entity);
+            var _result = new Response();
+            try
+            {
+                var updatedItem = _itemManager.Update(entity);
+                return Ok(updatedItem); // 200 OK döner
+            }
+            catch (System.Exception _ex)
+            {
+                return StatusCode(500, new Response { Message = _ex.Message, Success = false }); // 500 Internal Server Error döner
+            }
         }
 
+        // Belirli bir öğeyi ID ile siler
         [HttpDelete("{id}")]
-        public Response Delete(int id)
+        public ActionResult Delete(int id)
         {
-            return _itemManager.Delete(id);
+            try
+            {
+                _itemManager.Delete(id);
+                return NoContent(); // 204 No Content döner
+            }
+            catch (System.Exception _ex)
+            {
+                return StatusCode(500, new Response { Message = _ex.Message, Success = false }); // 500 Internal Server Error döner
+            }
         }
-
-
     }
 }

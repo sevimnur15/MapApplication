@@ -4,101 +4,100 @@ using BasarsoftFirst.Home;
 using BasarsoftFirst.Service;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace BasarsoftFirst.Service
 {
-   
-        
-        public class ItemDbService<T> : IItemManager<T> where T : class
+    public class ItemDbService<T> : IItemManager<T> where T : class
+    {
+        private readonly ItemDb _context;
+        private readonly DbSet<T> _dbSet;
+
+        public ItemDbService(ItemDb context)
         {
-            private  readonly ItemDb _context;
-            private readonly DbSet<T> _dbSet;
+            _context = context;
+            _dbSet = _context.Set<T>();
+        }
 
-            public ItemDbService(ItemDb context)
+        // Tüm verileri getirir
+        public List<T> GetAll()
+        {
+            try
             {
-                _context = context;
-                _dbSet = _context.Set<T>();
+                return _dbSet.ToList(); // Tüm verileri döndürür
             }
-
-            public Response GetAll()
+            catch
             {
-                try
-                {
-                    var items = _dbSet.ToList();
-                    return new Response { Value = items, Result = true, Message = "Veriler getirildi." };
-                }
-                catch (Exception ex)
-                {
-                    return new Response { Value = null, Result = false, Message = ex.Message };
-                }
-            }
-
-            public Response GetById(int id)
-            {
-                try
-                {
-                    var item = _dbSet.Find(id);
-                    if (item == null)
-                    {
-                        return new Response { Value = null, Result = false, Message = "Veri bulunamadı" };
-                    }
-                    return new Response { Value = item, Result = true, Message = "Veri bulundu" };
-                }
-                catch (Exception ex)
-                {
-                    return new Response { Value = null, Result = false, Message = ex.Message };
-                }
-            }
-
-            public Response Add(T entity)
-            {
-                try
-                {
-                    _dbSet.Add(entity);
-                    _context.SaveChanges();
-                    return new Response { Value = entity, Result = true, Message = "Veri başarıyla eklendi" };
-                }
-                catch (Exception ex)
-                {
-                    return new Response { Value = null, Result = false, Message = ex.Message };
-                }
-            }
-
-            public Response Update(T entity)
-            {
-                try
-                {
-                    _dbSet.Update(entity);
-                    _context.SaveChanges();
-                    return new Response { Value = entity, Result = true, Message = "Veri başarıyla güncellendi" };
-                }
-                catch (Exception ex)
-                {
-                    return new Response { Value = null, Result = false, Message = ex.Message };
-                }
-            }
-
-            public Response Delete(int id)
-            {
-                try
-                {
-                    var item = _dbSet.Find(id);
-                    if (item == null)
-                    {
-                        return new Response { Value = null, Result = false, Message = "Veri bulunamadı" };
-                    }
-
-                    _dbSet.Remove(item);
-                    _context.SaveChanges();
-                    return new Response { Value = item, Result = true, Message = "Veri başarıyla sillindi" };
-                }
-                catch (Exception ex)
-                {
-                    return new Response { Value = null, Result = false, Message = ex.Message };
-                }
+                return new List<T>(); // Hata durumunda boş bir liste döner
             }
         }
-    
 
+        // ID'ye göre bir veri getirir
+        public List<T> GetById(int id)
+        {
+            try
+            {
+                var item = _dbSet.Find(id);
+                if (item == null)
+                {
+                    return new List<T>(); // Veri bulunamadığında boş liste döner
+                }
+                return new List<T> { item }; // Bulunan öğeyi içeren liste döner
+            }
+            catch
+            {
+                return new List<T>(); // Hata durumunda boş bir liste döner
+            }
+        }
+
+        // Yeni bir veri ekler
+        public List<T> Add(T entity)
+        {
+            try
+            {
+                _dbSet.Add(entity);
+                _context.SaveChanges();
+                return _dbSet.ToList(); // Güncellenmiş listeyi döndürür
+            }
+            catch
+            {
+                return new List<T>(); // Hata durumunda boş bir liste döner
+            }
+        }
+
+        // Mevcut bir veriyi günceller
+        public List<T> Update(T entity)
+        {
+            try
+            {
+                _dbSet.Update(entity);
+                _context.SaveChanges();
+                return _dbSet.ToList(); // Güncellenmiş listeyi döndürür
+            }
+            catch
+            {
+                return new List<T>(); // Hata durumunda boş bir liste döner
+            }
+        }
+
+        // ID'ye göre bir veriyi siler
+        public List<T> Delete(int id)
+        {
+            try
+            {
+                var item = _dbSet.Find(id);
+                if (item == null)
+                {
+                    return new List<T>(); // Veri bulunamadığında boş liste döner
+                }
+
+                _dbSet.Remove(item);
+                _context.SaveChanges();
+                return _dbSet.ToList(); // Güncellenmiş listeyi döndürür
+            }
+            catch
+            {
+                return new List<T>(); // Hata durumunda boş bir liste döner
+            }
+        }
+    }
 }

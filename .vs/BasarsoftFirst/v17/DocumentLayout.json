@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F7F61971-69E5-4605-AD95-6F69A153A974}|BasarsoftFirst.csproj|c:\\users\\lenovo\\source\\repos\\basarsoftfirst\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7F61971-69E5-4605-AD95-6F69A153A974}|BasarsoftFirst.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7F61971-69E5-4605-AD95-6F69A153A974}|BasarsoftFirst.csproj|c:\\users\\lenovo\\source\\repos\\basarsoftfirst\\service\\itemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7F61971-69E5-4605-AD95-6F69A153A974}|BasarsoftFirst.csproj|solutionrelative:service\\itemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F7F61971-69E5-4605-AD95-6F69A153A974}|BasarsoftFirst.csproj|c:\\users\\lenovo\\source\\repos\\basarsoftfirst\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F7F61971-69E5-4605-AD95-6F69A153A974}|BasarsoftFirst.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,12 +11,24 @@
       "RelativeMoniker": "D:0:0:{F7F61971-69E5-4605-AD95-6F69A153A974}|BasarsoftFirst.csproj|solutionrelative:service\\itemdbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F7F61971-69E5-4605-AD95-6F69A153A974}|BasarsoftFirst.csproj|c:\\users\\lenovo\\source\\repos\\basarsoftfirst\\service\\iitemmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7F61971-69E5-4605-AD95-6F69A153A974}|BasarsoftFirst.csproj|solutionrelative:service\\iitemmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F7F61971-69E5-4605-AD95-6F69A153A974}|BasarsoftFirst.csproj|c:\\users\\lenovo\\source\\repos\\basarsoftfirst\\service\\itemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7F61971-69E5-4605-AD95-6F69A153A974}|BasarsoftFirst.csproj|solutionrelative:service\\itemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7F61971-69E5-4605-AD95-6F69A153A974}|BasarsoftFirst.csproj|c:\\users\\lenovo\\source\\repos\\basarsoftfirst\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F7F61971-69E5-4605-AD95-6F69A153A974}|BasarsoftFirst.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F7F61971-69E5-4605-AD95-6F69A153A974}|BasarsoftFirst.csproj|c:\\users\\lenovo\\source\\repos\\basarsoftfirst\\data\\itemdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F7F61971-69E5-4605-AD95-6F69A153A974}|BasarsoftFirst.csproj|solutionrelative:data\\itemdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7F61971-69E5-4605-AD95-6F69A153A974}|BasarsoftFirst.csproj|c:\\users\\lenovo\\source\\repos\\basarsoftfirst\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7F61971-69E5-4605-AD95-6F69A153A974}|BasarsoftFirst.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7F61971-69E5-4605-AD95-6F69A153A974}|BasarsoftFirst.csproj|c:\\users\\lenovo\\source\\repos\\basarsoftfirst\\service\\iitemmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7F61971-69E5-4605-AD95-6F69A153A974}|BasarsoftFirst.csproj|solutionrelative:service\\iitemmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F7F61971-69E5-4605-AD95-6F69A153A974}|BasarsoftFirst.csproj|c:\\users\\lenovo\\source\\repos\\basarsoftfirst\\home\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,7 +54,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
+              "Title": "ItemService.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\Service\\ItemService.cs",
+              "RelativeDocumentMoniker": "Service\\ItemService.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\Service\\ItemService.cs",
+              "RelativeToolTip": "Service\\ItemService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T08:37:40.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-20T08:34:45.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ItemDb.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\data\\ItemDb.cs",
               "RelativeDocumentMoniker": "data\\ItemDb.cs",
@@ -63,93 +93,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ItemDbService.cs",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\Service\\ItemDbService.cs",
-              "RelativeDocumentMoniker": "Service\\ItemDbService.cs",
-              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\Service\\ItemDbService.cs",
-              "RelativeToolTip": "Service\\ItemDbService.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAQwFkAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T06:40:29.523Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IItemManager.cs",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\Service\\IItemManager.cs",
-              "RelativeDocumentMoniker": "Service\\IItemManager.cs",
-              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\Service\\IItemManager.cs",
-              "RelativeToolTip": "Service\\IItemManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-14T13:09:58.518Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAACsAAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-14T06:48:11.332Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABsAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-14T06:59:03.108Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Item.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\Home\\Item.cs",
               "RelativeDocumentMoniker": "Home\\Item.cs",
               "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\Home\\Item.cs",
               "RelativeToolTip": "Home\\Item.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAyAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-14T06:49:09.547Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ItemService.cs",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\Service\\ItemService.cs",
-              "RelativeDocumentMoniker": "Service\\ItemService.cs",
-              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\Service\\ItemService.cs",
-              "RelativeToolTip": "Service\\ItemService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-14T12:52:04.4Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Response.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\Home\\Response.cs",
               "RelativeDocumentMoniker": "Home\\Response.cs",
               "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\Home\\Response.cs",
               "RelativeToolTip": "Home\\Response.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAALAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAA3wBoAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-14T08:29:12.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ItemDbService.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\Service\\ItemDbService.cs",
+              "RelativeDocumentMoniker": "Service\\ItemDbService.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\Service\\ItemDbService.cs",
+              "RelativeToolTip": "Service\\ItemDbService.cs",
+              "ViewState": "AQIAAEkAAAAAAAAAAAAkwFoAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T06:40:29.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IItemManager.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\Service\\IItemManager.cs",
+              "RelativeDocumentMoniker": "Service\\IItemManager.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\Service\\IItemManager.cs",
+              "RelativeToolTip": "Service\\IItemManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T13:09:58.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\BasarsoftFirst\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T06:59:03.108Z",
               "EditorCaption": ""
             }
           ]
