@@ -6,15 +6,14 @@ using System.Collections.Generic;
 
 namespace BasarsoftFirst.Service
 {
-    public interface IItemManager<T> where T : class
+    public interface IItemManager<Item> where Item : class
     {
         
-        List<T> GetAll();
-        List<T> GetById(int id);
-        List<T> Add(T entity);
-        List<T> Update(T entity);
-        // Belirli bir id'ye göre öğe siler ve list1 adında bir Response listesi döner
-        List<T> Delete(int id);
+        List<Item> GetItemList();
+        Item GetById(int id);
+        void Add(Item entity);
+        void  Update(Item entity);
+        void Delete(int id);
     }
 }
 

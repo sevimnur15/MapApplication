@@ -1,103 +1,46 @@
-﻿using BasarsoftFirst.congrate;
-using BasarsoftFirst.data;
-using BasarsoftFirst.Home;
+﻿using BasarsoftFirst.data;
 using BasarsoftFirst.Service;
-using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
+using BasarsoftFirst.UnitOfWork;
 
 namespace BasarsoftFirst.Service
 {
-    public class ItemDbService<T> : IItemManager<T> where T : class
+    public class ItemDbService : IItemManager<BasarsoftFirst.congrate.Item> 
     {
-        private readonly ItemDb _context;
-        private readonly DbSet<T> _dbSet;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public ItemDbService(ItemDb context)
+        public ItemDbService(IUnitOfWork unitOfWork)
         {
-            _context = context;
-            _dbSet = _context.Set<T>();
+            _unitOfWork = unitOfWork;
         }
 
-        // Tüm verileri getirir
-        public List<T> GetAll()
+        public List<BasarsoftFirst.congrate.Item> GetItemList()
         {
-            try
-            {
-                return _dbSet.ToList(); // Tüm verileri döndürür
-            }
-            catch
-            {
-                return new List<T>(); // Hata durumunda boş bir liste döner
-            }
+            return _unitOfWork.Repository.GetItemList().ToList(); 
         }
 
-        // ID'ye göre bir veri getirir
-        public List<T> GetById(int id)
+        public BasarsoftFirst.congrate.Item GetById(int id)
         {
-            try
-            {
-                var item = _dbSet.Find(id);
-                if (item == null)
-                {
-                    return new List<T>(); // Veri bulunamadığında boş liste döner
-                }
-                return new List<T> { item }; // Bulunan öğeyi içeren liste döner
-            }
-            catch
-            {
-                return new List<T>(); // Hata durumunda boş bir liste döner
-            }
+            return _unitOfWork.Repository.GetById(id); 
         }
 
-        // Yeni bir veri ekler
-        public List<T> Add(T entity)
+        public void Add(BasarsoftFirst.congrate.Item entity)
         {
-            try
-            {
-                _dbSet.Add(entity);
-                _context.SaveChanges();
-                return _dbSet.ToList(); // Güncellenmiş listeyi döndürür
-            }
-            catch
-            {
-                return new List<T>(); // Hata durumunda boş bir liste döner
-            }
+            _unitOfWork.Repository.Add(entity); 
+            _unitOfWork.Complete(); 
         }
 
-        // Mevcut bir veriyi günceller
-        public List<T> Update(T entity)
+        public void Update(BasarsoftFirst.congrate.Item entity)
         {
-            try
-            {
-                _dbSet.Update(entity);
-                _context.SaveChanges();
-                return _dbSet.ToList(); // Güncellenmiş listeyi döndürür
-            }
-            catch
-            {
-                return new List<T>(); // Hata durumunda boş bir liste döner
-            }
+            _unitOfWork.Repository.Update(entity); 
+            _unitOfWork.Complete(); 
         }
 
-        // ID'ye göre bir veriyi siler
-        public List<T> Delete(int id)
+        public void Delete(int id)
         {
-            try
-            {
-                var item = _dbSet.Find(id);
-                if (item == null)
-                {
-                    return new List<T>(); // Veri bulunamadığında boş liste döner
-                }
-
-                _dbSet.Remove(item);
-                _context.SaveChanges();
-                return _dbSet.ToList(); // Güncellenmiş listeyi döndürür
-            }
-            catch
-            {
-                return new List<T>(); // Hata durumunda boş bir liste döner
-            }
+            _unitOfWork.Repository.Delete(id); 
+            _unitOfWork.Complete(); 
         }
     }
 }

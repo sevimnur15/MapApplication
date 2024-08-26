@@ -3,7 +3,6 @@ using BasarsoftFirst.Home;
 using BasarsoftFirst.Service;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq; // Linq namespace'ini eklemeyi unutmayın
 
 namespace BasarsoftFirst.Controllers
 {
@@ -20,89 +19,102 @@ namespace BasarsoftFirst.Controllers
 
         // Tüm öğeleri döndürür
         [HttpGet]
-        public ActionResult<List<Item>> GetAll()
+        public Response GetItemList()
         {
-            var _result = new List<Item>();
+            var _result = new Response();
             try
             {
-                _result = _itemManager.GetAll();
-                return Ok(_result); // 200 OK döner
+                _result.Data = _itemManager.GetItemList();
+                _result.Success = true;
+                return _result;
             }
             catch (System.Exception _ex)
             {
-                return StatusCode(500, new Response { Message = _ex.Message, Success = false }); // 500 Internal Server Error döner
+                _result.Message = _ex.Message;
+                return _result;
             }
         }
 
         // Belirli bir öğeyi ID ile döndürür
         [HttpGet("{id}")]
-        public ActionResult<Item> GetById(int id)
+        public Response GetById(int id)
         {
+            var _result = new Response();
             try
             {
                 var item = _itemManager.GetById(id);
-                if (item == null)
+                if (item != null)
                 {
-                    return NotFound(); // 404 Not Found döner
+                    _result.Data = item;
+                    _result.Success = true;
                 }
-                return Ok(item); // 200 OK döner
+                else
+                {
+                    _result.Message = "Item bulunamadı.";
+                }
+                return _result;
             }
             catch (System.Exception _ex)
             {
-                return StatusCode(500, new Response { Message = _ex.Message, Success = false }); // 500 Internal Server Error döner
+                _result.Message = _ex.Message;
+                return _result;
             }
         }
 
         // Yeni bir öğe ekler
         [HttpPost]
-        public ActionResult<Item> Add(Item entity)
+        public Response Add(Item entity)
         {
+            var _result = new Response();
             try
             {
-                var createdItems = _itemManager.Add(entity); // Bu satırda birden fazla öğe dönebilir
-                var createdItem = createdItems.FirstOrDefault(); // İlk öğeyi al
-
-                if (createdItem == null)
-                {
-                    return BadRequest(new Response { Message = "Item could not be created.", Success = false }); // Başarısız oldu
-                }
-
-                return CreatedAtAction(nameof(GetById), new { id = createdItem.Id }, createdItem); // 201 Created döner
+                _itemManager.Add(entity);
+                _result.Success = true;
+                _result.Message = "Item eklendi.";
+                return _result;
             }
             catch (System.Exception _ex)
             {
-                return StatusCode(500, new Response { Message = _ex.Message, Success = false }); // 500 Internal Server Error döner
+                _result.Message = _ex.Message;
+                return _result;
             }
         }
 
         // Mevcut bir öğeyi günceller
         [HttpPut]
-        public ActionResult<Item> Update(Item entity)
+        public Response Update(Item entity)
         {
             var _result = new Response();
             try
             {
-                var updatedItem = _itemManager.Update(entity);
-                return Ok(updatedItem); // 200 OK döner
+                _itemManager.Update(entity);
+                _result.Success = true;
+                _result.Message = "Item başarıyla güncellendi.";
+                return _result;
             }
             catch (System.Exception _ex)
             {
-                return StatusCode(500, new Response { Message = _ex.Message, Success = false }); // 500 Internal Server Error döner
+                _result.Message = _ex.Message;
+                return _result;
             }
         }
 
         // Belirli bir öğeyi ID ile siler
         [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
+        public Response Delete(int id)
         {
+            var _result = new Response();
             try
             {
                 _itemManager.Delete(id);
-                return NoContent(); // 204 No Content döner
+                _result.Success = true;
+                _result.Message = "Item başarıyla silindi.";
+                return _result;
             }
             catch (System.Exception _ex)
             {
-                return StatusCode(500, new Response { Message = _ex.Message, Success = false }); // 500 Internal Server Error döner
+                _result.Message = _ex.Message;
+                return _result;
             }
         }
     }
