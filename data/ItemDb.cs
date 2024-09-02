@@ -9,6 +9,7 @@ namespace BasarsoftFirst.data
     {
         public ItemDb(DbContextOptions<ItemDb> options) : base(options) { }
         public DbSet<Item>Items { get; set; }
+        public DbSet<WktModels> WktModels { get; set; } // WktModels DbSet'i
 
 
 

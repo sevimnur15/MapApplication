@@ -2,9 +2,9 @@
 {
     public class WktModels
     {
-        public string wkt { get; set; }
+        public string Wkt { get; set; }
         public string Name { get; set; }
-        public string Descpriction{ get; set; }
+        public int Id{ get; set; }
         
     }
 }

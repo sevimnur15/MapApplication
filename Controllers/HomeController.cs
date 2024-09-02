@@ -7,17 +7,17 @@ using System.Collections.Generic;
 namespace BasarsoftFirst.Controllers
 {
     [ApiController]
-    [Route("api/[Controller]")]
+    [Route("api/[controller]")]
     public class HomeController : ControllerBase
     {
-        private readonly IItemManager<Item> _itemManager;
+        private readonly IRepository<WktModels> _itemManager;
 
-        public HomeController(IItemManager<Item> itemManager)
+        public HomeController(IRepository<WktModels> itemManager)
         {
             _itemManager = itemManager;
         }
 
-        // Tüm öğeleri döndürür
+        // Tüm WKT'leri döndürür
         [HttpGet]
         public Response GetItemList()
         {
@@ -35,7 +35,7 @@ namespace BasarsoftFirst.Controllers
             }
         }
 
-        // Belirli bir öğeyi ID ile döndürür
+        // Belirli bir WKT'yi ID ile döndürür
         [HttpGet("{id}")]
         public Response GetById(int id)
         {
@@ -50,7 +50,7 @@ namespace BasarsoftFirst.Controllers
                 }
                 else
                 {
-                    _result.Message = "Item bulunamadı.";
+                    _result.Message = "WKT bulunamadı.";
                 }
                 return _result;
             }
@@ -61,16 +61,17 @@ namespace BasarsoftFirst.Controllers
             }
         }
 
-        // Yeni bir öğe ekler
-        [HttpPost]
-        public Response Add(Item entity)
+        // Yeni bir WKT ekler
+        [HttpPost("addWKT")]
+        public Response AddWKT(WktModels entity)
         {
             var _result = new Response();
             try
             {
-                _itemManager.Add(entity);
+                var item = new WktModels { Wkt = entity.Wkt, Name = entity.Name };
+                _itemManager.Add(item); // WKT nesnesini ekle
                 _result.Success = true;
-                _result.Message = "Item eklendi.";
+                _result.Message = "WKT başarıyla eklendi.";
                 return _result;
             }
             catch (System.Exception _ex)
@@ -80,16 +81,16 @@ namespace BasarsoftFirst.Controllers
             }
         }
 
-        // Mevcut bir öğeyi günceller
+        // Mevcut bir WKT'yi günceller
         [HttpPut]
-        public Response Update(Item entity)
+        public Response Update(WktModels entity)
         {
             var _result = new Response();
             try
             {
-                _itemManager.Update(entity);
+                _itemManager.Update(entity); // WKT nesnesini güncelle
                 _result.Success = true;
-                _result.Message = "Item başarıyla güncellendi.";
+                _result.Message = "WKT başarıyla güncellendi.";
                 return _result;
             }
             catch (System.Exception _ex)
@@ -99,16 +100,16 @@ namespace BasarsoftFirst.Controllers
             }
         }
 
-        // Belirli bir öğeyi ID ile siler
+        // Belirli bir WKT'yi ID ile siler
         [HttpDelete("{id}")]
         public Response Delete(int id)
         {
             var _result = new Response();
             try
             {
-                _itemManager.Delete(id);
+                _itemManager.Delete(id); // WKT'yi sil
                 _result.Success = true;
-                _result.Message = "Item başarıyla silindi.";
+                _result.Message = "WKT başarıyla silindi.";
                 return _result;
             }
             catch (System.Exception _ex)
